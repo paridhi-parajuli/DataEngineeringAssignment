@@ -1,0 +1,17 @@
+● How will you read messages from the queue?
+--> I have used the boto3 library to connect it to the endpoint and read the data in json format.
+● What type of data structures should be used?
+--> Since the data is recieved in json format, it comes in key value pair as in dictionary. A dataframe can also be used.
+● How will you mask the PII data so that duplicate values can be identified?
+--> Even after masking identical values will be represented by same code so we can know the duplicate values.
+● What will be your strategy for connecting and writing to Postgres?
+--> I would create a database connection object and use that to execute queries that could be create table or insert into table.
+● Where and how will your application run? || ● How would you deploy this application in production?
+--> It can be run by cloning the repo in a server (maybe) that connects to both the postgres and the queue.
+● What other components would you want to add to make this production ready?
+--> There are a lots like we can use more efficient data structures rather than json to make it more efficient. We can also optimize this for quick processing. If i had time I could have implemented in a better approach like using object oriented way, making config files and better make files.
+● How can this application scale with a growing dataset.
+--> The machine running this applicationn could be a bottleneck. The amount of data being written to postgres can also be bottleneck. It will need changes if it has to work with large datasets.
+● How can PII be recovered later on?
+--> Yes, using the same decode/encode function
+
